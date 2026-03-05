@@ -8,7 +8,12 @@
 
 @layer base {
   body {
-    @apply bg-[#f0f0f0] text-black font-sans;
+    @apply bg-[#050505] text-[#00ff00] font-mono;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(0, 255, 0, 0.05) 0%, transparent 70%),
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 100%, 100% 2px, 100% 100%;
   }
 }
 
@@ -22,15 +27,43 @@
   animation: marquee 20s linear infinite;
 }
 
-.brutal-shadow {
-  box-shadow: 8px 8px 0px 0px #000;
+.cyber-shadow {
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3), 0 0 20px rgba(0, 255, 0, 0.1);
 }
 
-.brutal-shadow-hover:hover {
-  box-shadow: 12px 12px 0px 0px #000;
-  transform: translate(-4px, -4px);
+.cyber-shadow-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.2);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
 }
 
-.brutal-border {
-  border: 2px solid #000;
+.cyber-border {
+  border: 1px solid #00ff00;
+  position: relative;
+}
+
+.cyber-border::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  pointer-events: none;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+.neon-magenta {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+}
+
+.cyber-grid {
+  background-image: linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
